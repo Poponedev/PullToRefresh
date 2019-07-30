@@ -33,7 +33,7 @@ public extension UIScrollView {
         }
     }
     
-    public func addPullToRefresh(_ pullToRefresh: PullToRefresh, action: @escaping () -> ()) {
+    func addPullToRefresh(_ pullToRefresh: PullToRefresh, action: @escaping () -> ()) {
         pullToRefresh.scrollView = self
         pullToRefresh.action = action
         
@@ -57,7 +57,7 @@ public extension UIScrollView {
         view.frame = CGRect(x: 0, y: originY, width: frame.width, height: view.frame.height)
         
         addSubview(view)
-        sendSubview(toBack: view)
+        sendSubviewToBack(view)
     }
     
     func removePullToRefresh(at position: Position) {
